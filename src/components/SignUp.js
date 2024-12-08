@@ -10,6 +10,7 @@ const SignUp = () => {
     password: "",
     role: "", // Added role field
   });
+  
 
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
@@ -29,6 +30,7 @@ const SignUp = () => {
       console.log(formData);
   
       // Determine the URL based on the role
+      //hello
       let url = "";
       switch (formData.role) {
         case "donor":
@@ -41,7 +43,7 @@ const SignUp = () => {
           url = "https://charityloop.up.railway.app/recipient";
           break;
           case "admin":
-          url = "https://charityloop.up.railway.app/admin";
+          url = "https://charityloop.up.railway.app//admin";
           break;
         default:
           setMessage("Invalid role selected. Please try again.");

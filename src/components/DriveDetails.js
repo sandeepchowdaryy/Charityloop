@@ -13,6 +13,7 @@ const DriveDetails = () => {
         // Fetch drive details from the backend
         const fetchDriveDetails = async () => {
             try {
+                //hello
                 const response = await axios.get(`https://charityloop.up.railway.app/donationdrive/${driveId}`);
                 setDrive(response.data);
             } catch (err) {
@@ -41,7 +42,9 @@ const DriveDetails = () => {
             setSuccessMessage(response.data);
             setError(null);
     
-            // Fetch updated drive details to reflect changes
+            // Fetch updated drive details to reflect changes 
+            //hello
+            //hello
             const updatedDrive = await axios.get(`https://charityloop.up.railway.app/donationdrive/${driveId}`);
             setDrive(updatedDrive.data);
             console.log(updatedDrive.data);
@@ -68,6 +71,7 @@ const DriveDetails = () => {
                 {/* Image at the top */}
                 {drive.image ? (
                     <img
+                    //hello
                         src={`https://charityloop.up.railway.app/donationdrive/${driveId}/image`}
                         alt={drive.name}
                         className="w-full h-64 object-cover rounded-md mb-6"

@@ -24,6 +24,7 @@ const DonationDrives = () => {
 
   const fetchDonationDrives = async () => {
     try {
+      //hello
       const response = await axios.get("https://charityloop.up.railway.app/donationdrive");
       setDonationDrives(response.data);
     } catch (error) {
@@ -43,6 +44,7 @@ const DonationDrives = () => {
 
     try {
       const response = await axios.post(
+        //hello
         "https://charityloop.up.railway.app/donationdrive",
         formData,
         {
@@ -170,6 +172,7 @@ const DonationDrives = () => {
               className="border border-gray-300 rounded-lg shadow-lg p-2"
             >
               <img
+              //hello
                 src={`https://charityloop.up.railway.app/donationdrive/${drive.id}/image`}
                 alt={drive.name}
                 className="w-full h-48 object-cover rounded-md mb-4"
@@ -197,6 +200,7 @@ const DonationDrives = () => {
               className="border border-gray-300 rounded-lg shadow-lg p-2"
             >
               <img
+              //hello
                 src={`https://charityloop.up.railway.app/donationdrive/${drive.id}/image`}
                 alt={drive.name}
                 className="w-full h-48 object-cover rounded-md mb-4"
