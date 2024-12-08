@@ -11,32 +11,51 @@ const AdminPage = () => {
   const [donationDrives, setDonationDrives] = useState([]);
   const { userDetails } = useSelector((store) => store.details);
 
+  const [loading, setLoading] = useState(true);
+  
+
+useEffect(() => {
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      // Fetch data
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchData();
+}, []);
+
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const donorResponse = await axios.get("http://localhost:8080/donor");
-        const logisticsResponse = await axios.get(
-          "http://localhost:8080/logisticsController"
-        );
-        const recipientResponse = await axios.get("http://localhost:8080/recipient");
-        const drivesResponse = await axios.get("http://localhost:8080/donationdrive");
-
-        setDonors(donorResponse.data);
-        setLogistics(logisticsResponse.data);
-        setRecipients(recipientResponse.data);
-        setDonationDrives(drivesResponse.data);
+        const [donors, logistics, recipients, drives] = await Promise.all([
+          axios.get("https://charityloop.up.railway.app/donor").then(res => res.data),
+          axios.get("https://charityloop.up.railway.app/logisticsController").then(res => res.data),
+          axios.get("https://charityloop.up.railway.app/recipient").then(res => res.data),
+          axios.get("https://charityloop.up.railway.app/donationdrive").then(res => res.data),
+        ]);
+  
+        setDonors(donors);
+        setLogistics(logistics);
+        setRecipients(recipients);
+        setDonationDrives(drives);
       } catch (error) {
-        console.error("Error fetching data:", error);
-        toast.error("Failed to fetch data from the server.");
+        toast.error("Failed to fetch data.");
       }
     };
-
+  
     fetchData();
   }, []);
+  
 
   const handleDriveAction = async (driveId, action) => {
     try {
-      await axios.put(`http://localhost:8080/admin/1/donationdrives/${driveId}/${action}`);
+      await axios.put(`https://charityloop.up.railway.app/admin/1/donationdrives/${driveId}/${action}`);
       if (action === "accept") {
         toast.success("Donation drive accepted successfully!");
         setDonationDrives((prevDrives) =>
@@ -64,7 +83,7 @@ const AdminPage = () => {
     const { id, role } = userDetails;
 
     try {
-      await axios.put(`http://localhost:8080/${role}/${id}/${formRole}/${itemId}/${action}`);
+      await axios.put(`https://charityloop.up.railway.app/${role}/${id}/${formRole}/${itemId}/${action}`);
 
       if (formRole === "coordinators") {
         if (action === "accept") {

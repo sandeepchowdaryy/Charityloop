@@ -24,7 +24,7 @@ const DonationDrives = () => {
 
   const fetchDonationDrives = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/donationdrive");
+      const response = await axios.get("https://charityloop.up.railway.app/donationdrive");
       setDonationDrives(response.data);
     } catch (error) {
       console.error("Error fetching donation drives:", error);
@@ -43,7 +43,7 @@ const DonationDrives = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/donationdrive",
+        "https://charityloop.up.railway.app/donationdrive",
         formData,
         {
           headers: {
@@ -170,7 +170,7 @@ const DonationDrives = () => {
               className="border border-gray-300 rounded-lg shadow-lg p-2"
             >
               <img
-                src={`http://localhost:8080/donationdrive/${drive.id}/image`}
+                src={`https://charityloop.up.railway.app/donationdrive/${drive.id}/image`}
                 alt={drive.name}
                 className="w-full h-48 object-cover rounded-md mb-4"
               />
@@ -197,7 +197,7 @@ const DonationDrives = () => {
               className="border border-gray-300 rounded-lg shadow-lg p-2"
             >
               <img
-                src={`http://localhost:8080/donationdrive/${drive.id}/image`}
+                src={`https://charityloop.up.railway.app/donationdrive/${drive.id}/image`}
                 alt={drive.name}
                 className="w-full h-48 object-cover rounded-md mb-4"
               />

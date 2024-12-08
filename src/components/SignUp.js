@@ -32,16 +32,16 @@ const SignUp = () => {
       let url = "";
       switch (formData.role) {
         case "donor":
-          url = "http://localhost:8080/donor";
+          url = "https://charityloop.up.railway.app/donor";
           break;
         case "logisticsController":
-          url = "http://localhost:8080/logisticsController";
+          url = "https://charityloop.up.railway.app/logisticsController";
           break;
         case "recipient":
-          url = "http://localhost:8080/recipient";
+          url = "https://charityloop.up.railway.app/recipient";
           break;
           case "admin":
-          url = "http://localhost:8080/admin";
+          url = "https://charityloop.up.railway.app/admin";
           break;
         default:
           setMessage("Invalid role selected. Please try again.");

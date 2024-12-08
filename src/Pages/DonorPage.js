@@ -20,7 +20,7 @@ const DonorPage = () => {
   useEffect(() => {
     const fetchDrives = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/donationdrive");
+        const response = await axios.get("https://charityloop.up.railway.app/donationdrive");
         const acceptedDrives = response.data.filter(
           (drive) => drive.status === "accepted"
         );
@@ -119,7 +119,7 @@ const DonorPage = () => {
                   className="p-4 bg-white shadow-md rounded-lg"
                 >
                   <img
-                    src={`http://localhost:8080/donationdrive/${drive.id}/image`}
+                    src={`https://charityloop.up.railway.app/donationdrive/${drive.id}/image`}
                     alt={drive.name}
                     className="w-full h-40 object-cover rounded-md mb-4"
                   />

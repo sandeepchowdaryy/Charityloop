@@ -13,7 +13,7 @@ const DriveDetails = () => {
         // Fetch drive details from the backend
         const fetchDriveDetails = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/donationdrive/${driveId}`);
+                const response = await axios.get(`https://charityloop.up.railway.app/donationdrive/${driveId}`);
                 setDrive(response.data);
             } catch (err) {
                 setError("Failed to fetch drive details. Please try again.");
@@ -33,7 +33,7 @@ const DriveDetails = () => {
         try {
             // Send a PATCH request to add money to the donation drive
             const response = await axios.patch(
-                `http://localhost:8080/donationdrive/${driveId}/${amount}`, 
+                `https://charityloop.up.railway.app/donationdrive/${driveId}/${amount}`, 
                 null // Explicitly passing null as the request body
             );
     
@@ -42,7 +42,7 @@ const DriveDetails = () => {
             setError(null);
     
             // Fetch updated drive details to reflect changes
-            const updatedDrive = await axios.get(`http://localhost:8080/donationdrive/${driveId}`);
+            const updatedDrive = await axios.get(`https://charityloop.up.railway.app/donationdrive/${driveId}`);
             setDrive(updatedDrive.data);
             console.log(updatedDrive.data);
         } catch (err) {
@@ -68,7 +68,7 @@ const DriveDetails = () => {
                 {/* Image at the top */}
                 {drive.image ? (
                     <img
-                        src={`http://localhost:8080/donationdrive/${driveId}/image`}
+                        src={`https://charityloop.up.railway.app/donationdrive/${driveId}/image`}
                         alt={drive.name}
                         className="w-full h-64 object-cover rounded-md mb-6"
                     />

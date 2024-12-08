@@ -31,10 +31,10 @@ const Login = () => {
 
     try {
       const urls = [
-        "http://localhost:8080/donor",
-        "http://localhost:8080/logisticsController",
-        "http://localhost:8080/recipient",
-        "http://localhost:8080/admin",
+        "https://charityloop.up.railway.app/donor",
+        "https://charityloop.up.railway.app/logisticsController",
+        "https://charityloop.up.railway.app/recipient",
+        "https://charityloop.up.railway.app/admin",
       ];
 
       const responses = await Promise.all(urls.map((url) => axios.get(url)));
