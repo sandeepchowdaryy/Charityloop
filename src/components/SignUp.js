@@ -43,7 +43,7 @@ const SignUp = () => {
           url = "https://charityloop.up.railway.app/recipient";
           break;
           case "admin":
-          url = "https://charityloop.up.railway.app//admin";
+          url = "https://charityloop.up.railway.app/admin";
           break;
         default:
           setMessage("Invalid role selected. Please try again.");
