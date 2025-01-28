@@ -3,6 +3,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 
 const AdminPage = () => {
   const [donors, setDonors] = useState([]);
@@ -146,10 +147,17 @@ useEffect(() => {
             {donationDrives
               .filter((drive) => drive.status === "pending")
               .map((drive) => (
+                <Link to={"/donationdrive/"+drive.id}>
                 <div
                   key={drive.id}
                   className="border border-gray-300 p-4 rounded-lg shadow-md"
                 >
+                  <img
+              //hello
+                src={`https://charityloop.up.railway.app/donationdrive/${drive.id}/image`}
+                alt={drive.name}
+                className="w-full h-48 object-cover rounded-md mb-4"
+              />
                   <h3 className="font-bold text-lg">{drive.name}</h3>
                   <p>{drive.description}</p>
                   <p>Start Date: {drive.startDate}</p>
@@ -169,6 +177,7 @@ useEffect(() => {
                     </button>
                   </div>
                 </div>
+                </Link>
               ))}
           </div>
         </div>

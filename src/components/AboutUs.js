@@ -12,7 +12,7 @@ const AboutUs = () => {
             We are a passionate team dedicated to making a difference in the world through our donation drives and charity work.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pl-64">
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <img
               src="https://via.placeholder.com/300"
@@ -22,9 +22,6 @@ const AboutUs = () => {
             <div className="p-6">
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Marni Tarun Sandeep</h3>
               <p className="text-gray-600">FrontEnd & Backend</p>
-              <p className="mt-4 text-gray-700">
-                John is the driving force behind our mission to help those in need. With over 10 years of experience in charity work, he’s committed to making a positive impact.
-              </p>
             </div>
           </div>
 
@@ -37,24 +34,7 @@ const AboutUs = () => {
             <div className="p-6">
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Manoj Varma</h3>
               <p className="text-gray-600">FrontEnd</p>
-              <p className="mt-4 text-gray-700">
-                Jane ensures everything runs smoothly behind the scenes. Her meticulous planning and attention to detail are key to the success of our drives.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <img
-              src="https://via.placeholder.com/300"
-              alt="Team member 3"
-              className="w-full h-64 object-cover"
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Emily Turner</h3>
-              <p className="text-gray-600">FrontEnd</p>
-              <p className="mt-4 text-gray-700">
-                Emily is the heart of our community outreach efforts. She builds strong relationships with local organizations to ensure that our donations reach those who need it most.
-              </p>
+             
             </div>
           </div>
         </div>
