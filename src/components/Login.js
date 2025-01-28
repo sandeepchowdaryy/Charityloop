@@ -104,59 +104,66 @@ const Login = () => {
   </div>
   ):(
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
-        {message && <p className="text-center text-red-500 mb-4">{message}</p>}
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="block text-gray-700 font-semibold mb-2"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter your email"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="password"
-              className="block text-gray-700 font-semibold mb-2"
-            >
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              value={formData.password}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter your password"
-              required
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-blue-500 text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition duration-300"
-          >
-            Login
-          </button>
-        </form>
-        <p className="text-gray-700 text-center mt-4">
-          Don't have an account?{" "}
-          <a href="/signup" className="text-blue-500 hover:underline">
-            Sign up
-          </a>
-        </p>
-      </div>
+  <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+  <div className="text-left mb-2 text-gray-600">
+      <b>Sample Credentials :</b>
+      <p>user@gmail.com,User@1111</p>
+      <p>admin@gmail.com,Admin@1111</p>
     </div>
+    <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
+    {message && <p className="text-center text-red-500 mb-4">{message}</p>}
+    <form onSubmit={handleSubmit}>
+      <div className="mb-4">
+        <label
+          htmlFor="email"
+          className="block text-gray-700 font-semibold mb-2"
+        >
+          Email
+        </label>
+        <input
+          type="email"
+          id="email"
+          value={formData.email}
+          onChange={handleChange}
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
+      <div className="mb-4">
+        <label
+          htmlFor="password"
+          className="block text-gray-700 font-semibold mb-2"
+        >
+          Password
+        </label>
+        <input
+          type="password"
+          id="password"
+          value={formData.password}
+          onChange={handleChange}
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Enter your password"
+          required
+        />
+      </div>
+      <button
+        type="submit"
+        className="w-full bg-blue-500 text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition duration-300"
+      >
+        Login
+      </button>
+    </form>
+    <p className="text-center text-gray-700 mt-4">
+      Don't have an account?{" "}
+      <a href="/signup" className="text-blue-500 hover:underline">
+        Sign up
+      </a>
+    </p>
+    
+  </div>
+</div>
+
   );
 };
 
